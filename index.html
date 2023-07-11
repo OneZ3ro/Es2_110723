@@ -262,6 +262,7 @@
         }
         tbdy.appendChild(tr);
       }
+
       tbl.style.width = "100%";
       thd.style.height = "20px";
       thd.style.textAlign = "center";
@@ -363,9 +364,36 @@
     */
 
     const addRow = function () {
-      
-      
+      let tbdy = document.querySelector("#tableArea tbody");
+
+      for (let i = 0; i < 1; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 0; j < 4; j++) {
+          let td = document.createElement("td");
+          td.setAttribute("id", `tdbd_new${i}${j}`);
+          tr.appendChild(td);
+        }
+        tbdy.appendChild(tr);
+      }
     }
+
+    const addParam = function (par1, par2, par3, par4) {
+      const col00_new = document.getElementById("tdbd_new00");
+      const img6 = document.createElement("img");
+      img6.setAttribute("src", par1);
+      img6.style.height = "100px";
+      tdbd_new00.appendChild(img6);
+
+      const col01_new = document.getElementById("tdbd_new01");
+      tdbd_new01.innerText = par2;
+      const col02_new = document.getElementById("tdbd_new02");
+      tdbd_new02.innerText = par3;
+      const col03_new = document.getElementById("tdbd_new03");
+      tdbd_new03.innerText = par4;
+    }
+
+    addRow()
+    addParam("https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80", "macchinina", "12", "10€")
 
 //__________________________________________________________________________________________
 
