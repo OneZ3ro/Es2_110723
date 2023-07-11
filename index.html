@@ -129,8 +129,9 @@
       */
 
     const changeUrls = function () {
-      const primo_a = document.querySelector("a");
-      primo_a.setAttribute("href", "https://www.google.com");
+      let all_a = document.querySelectorAll("a:not(footer a)");
+      all_a = Array.from(all_a);
+      all_a.forEach(elem => elem.setAttribute("href", "https://www.google.com"))
       console.log("---------- Esercizio 4 ----------\nDone");
     }
     changeUrls();
@@ -285,6 +286,7 @@
       console.log(td4);
     }
     addElement();
+    console.log("---------- Esercizio 11 ----------\nDone");
 
 //__________________________________________________________________________________________
 
@@ -293,9 +295,11 @@
     */
 
     const addRow = function () {
-
-
+      const tbdy = document.querySelector("#tableArea tbody");
+      
+      console.log(tbdy);
     }
+    addRow()
 
 //__________________________________________________________________________________________
 
