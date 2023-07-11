@@ -395,6 +395,8 @@
     addRow()
     addParam("https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80", "macchinina", "12", "10€")
 
+    console.log("---------- Esercizio 12 ----------\nDone");
+
 //__________________________________________________________________________________________
 
     /* ESERCIZIO 13
@@ -405,6 +407,7 @@
       let every_img = document.querySelectorAll("img");
       every_img = Array.from(every_img);
       every_img.forEach(elem => elem.style.display = "none")
+      console.log("---------- Esercizio 13 ----------\nDone");
     }
     hideAllImages()
 
@@ -415,13 +418,14 @@
     */
 
    const h2 = document.getElementById("changeMyColor");
-   
+
     const changeColorWithRandom = function () {
       let randomColor = Math.floor(Math.random()*16777215).toString(16);
       h2.style.color = `#${randomColor}`;
       h2.style.userSelect = "none";
     }
     h2.onclick = changeColorWithRandom;
+    console.log("---------- Esercizio 14 ----------\nDone");
 
 //__________________________________________________________________________________________
 
@@ -429,10 +433,99 @@
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
 
-    const deleteVowels = function () {
+    const removeVowels = function (str) {
+      return str.replace(/[aeiou]/gi, '');
+    }
 
+    const deleteVowels = function () {
+      const h1 = document.querySelector("h1");
+      let h2 = document.querySelectorAll("h2");
+      let h3 = document.querySelectorAll("h3");
+      let li = document.querySelectorAll("li");
+      let a = document.querySelectorAll("a");
+      let p = document.querySelectorAll("p");
+      let td = document.querySelectorAll("td");
+
+      h2 = Array.from(h2);
+      h3 = Array.from(h3);
+      li = Array.from(li);
+      a = Array.from(a);
+      p = Array.from(p);
+      td = Array.from(td);
+
+      // //per controllo
+      // console.log(h2);
+      // console.log(h3);
+      // console.log(li);
+      // console.log(a);
+      // console.log(p);
+      // console.log(td);
+
+      h1.innerText = removeVowels(h1.innerText)
+      
+      // HALLELUJAH FUNZIONA!!!
+
+      // creo un array vuoto
+      const h2_arr = [];
+      // ciclo per la lunghezza di h2 (NodeList)
+      for (let i = 0; i < h2.length; i++) {
+        // metto nell'array il contenuto delle NodeList
+        h2_arr.push(h2[i].innerText.split(","));
+        // creo una variabile stringa vuota
+        let x = "";
+        // utilizzo la funzione removeVowels che mi rimuove le vocali (RICORDARSI DEL .toString() SE NO NON FUNZIONA PERCHÉ h2_arr[i] È UN OBJECT)
+        x = removeVowels(h2_arr[i].toString());
+        // assegno la stringa x al contenuto del h2[i]
+        h2[i].innerText = x;
+      }
+
+      // e così per tutti gli altri
+
+      const h3_arr = [];
+      for (let i = 0; i < h3.length; i++) {
+        h3_arr.push(h3[i].innerText.split(","));
+        let x = "";
+        x = removeVowels(h3_arr[i].toString());
+        h3[i].innerText = x;
+      }
+
+      const li_arr = [];
+      for (let i = 0; i < li.length; i++) {
+        li_arr.push(li[i].innerText.split(","));
+        let x = "";
+        x = removeVowels(li_arr[i].toString());
+        li[i].innerText = x;
+      }
+
+      const a_arr = [];
+      for (let i = 0; i < a.length; i++) {
+        a_arr.push(a[i].innerText.split(","));
+        let x = "";
+        x = removeVowels(a_arr[i].toString());
+        a[i].innerText = x;
+      }
+
+      const p_arr = [];
+      for (let i = 0; i < p.length; i++) {
+        p_arr.push(p[i].innerText.split(","));
+        let x = "";
+        x = removeVowels(p_arr[i].toString());
+        p[i].innerText = x;
+      }
+
+      const td_arr = [];
+      for (let i = 0; i < td.length; i++) {
+        td_arr.push(td[i].innerText.split(","));
+        let x = "";
+        x = removeVowels(td_arr[i].toString());
+        td[i].innerText = x;
+      }
+
+    console.log("---------- Esercizio 15 ----------\nDone");
 
     }
+    deleteVowels()
+
 //__________________________________________________________________________________________
 
   </script>
