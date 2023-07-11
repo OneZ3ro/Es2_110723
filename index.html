@@ -247,7 +247,7 @@
         let tr = document.createElement("tr");
         for (let j = 0; j < 4; j++) {
           let td = document.createElement("td");
-          td.setAttribute("id", `td${j}`);
+          td.setAttribute("id", `tdhd${j}`);
           tr.appendChild(td);
         }
         thd.appendChild(tr);
@@ -257,13 +257,15 @@
         let tr = document.createElement("tr");
         for (let j = 0; j < 4; j++) {
           let td = document.createElement("td");
+          td.setAttribute("id", `tdbd${i}${j}`);
           tr.appendChild(td);
         }
         tbdy.appendChild(tr);
       }
       tbl.style.width = "100%";
       thd.style.height = "20px";
-      tbdy.style.height = "60px";
+      thd.style.textAlign = "center";
+      tbdy.style.textAlign = "center";
       tbl.setAttribute("border", "1");
       tbl.appendChild(thd);
       tbl.appendChild(tbdy);
@@ -271,21 +273,87 @@
     }
     generateTable();
 
-    const addElement = function () {
-      const td1 = document.getElementById("td0");
-      td1.innerText = "immagine";
-      console.log(td1);
-      const td2 = document.getElementById("td1");
-      td2.innerText = "nome prodotto";
-      console.log(td2);
-      const td3 = document.getElementById("td2");
-      td3.innerText = "quantità";
-      console.log(td3);
-      const td4 = document.getElementById("td3");
-      td4.innerText = "prezzo";
-      console.log(td4);
+    const addElement_TableHead = function () {
+      const td0 = document.getElementById("tdhd0");
+      td0.innerText = "immagine";
+      const td1 = document.getElementById("tdhd1");
+      td1.innerText = "nome prodotto";
+      const td2 = document.getElementById("tdhd2");
+      td2.innerText = "quantità";
+      const td3 = document.getElementById("tdhd3");
+      td3.innerText = "prezzo";
     }
-    addElement();
+    addElement_TableHead();
+
+    const addElement_TableBody = function () {
+      //prima riga
+      const td00 = document.getElementById("tdbd00");
+      const img1 = document.createElement("img");
+      img1.setAttribute("src", "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80");
+      img1.style.height = "100px";
+      td00.appendChild(img1);
+      const td01 = document.getElementById("tdbd01");
+      td01.innerText = "occhiali";
+      const td02 = document.getElementById("tdbd02");
+      td02.innerText = "40";
+      const td03 = document.getElementById("tdbd03");
+      td03.innerText = "35€";
+
+      //seconda riga
+      const td10 = document.getElementById("tdbd10");
+      const img2 = document.createElement("img");
+      img2.setAttribute("src", "https://images.unsplash.com/photo-1560343090-f0409e92791a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80");
+      img2.style.height = "100px";
+      td10.appendChild(img2);
+      const td11 = document.getElementById("tdbd11");
+      td11.innerText = "scarpe";
+      const td12 = document.getElementById("tdbd12");
+      td12.innerText = "20";
+      const td13 = document.getElementById("tdbd13");
+      td13.innerText = "65€";
+      
+      //terza riga
+      const td20 = document.getElementById("tdbd20");
+      const img3 = document.createElement("img");
+      img3.setAttribute("src", "https://images.unsplash.com/photo-1503602642458-232111445657?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80");
+      img3.style.height = "100px";
+      td20.appendChild(img3);
+      const td21 = document.getElementById("tdbd21");
+      td21.innerText = "sgabello";
+      const td22 = document.getElementById("tdbd22");
+      td22.innerText = "30";
+      const td23 = document.getElementById("tdbd23");
+      td23.innerText = "19€";
+      
+      //quarta riga
+      const td30 = document.getElementById("tdbd30");
+      const img4 = document.createElement("img");
+      img4.setAttribute("src", "https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80");
+      img4.style.height = "100px";
+      td30.appendChild(img4);
+      const td31 = document.getElementById("tdbd31");
+      td31.innerText = "rossetto";
+      const td32 = document.getElementById("tdbd32");
+      td32.innerText = "60";
+      const td33 = document.getElementById("tdbd33");
+      td33.innerText = "9€";
+      
+      //quinta riga
+      const td40 = document.getElementById("tdbd40");
+      const img5 = document.createElement("img");
+      img5.setAttribute("src", "https://images.unsplash.com/photo-1485955900006-10f4d324d411?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80");
+      img5.style.height = "100px";
+      td40.appendChild(img5);
+      const td41 = document.getElementById("tdbd41");
+      td41.innerText = "piantina";
+      const td42 = document.getElementById("tdbd42");
+      td42.innerText = "35";
+      const td43 = document.getElementById("tdbd43");
+      td43.innerText = "15€";
+    }
+
+    addElement_TableHead();
+    addElement_TableBody();
     console.log("---------- Esercizio 11 ----------\nDone");
 
 //__________________________________________________________________________________________
@@ -295,11 +363,9 @@
     */
 
     const addRow = function () {
-      const tbdy = document.querySelector("#tableArea tbody");
       
-      console.log(tbdy);
+      
     }
-    addRow()
 
 //__________________________________________________________________________________________
 
