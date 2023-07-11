@@ -402,9 +402,11 @@
     */
 
     const hideAllImages = function () {
-
-
+      let every_img = document.querySelectorAll("img");
+      every_img = Array.from(every_img);
+      every_img.forEach(elem => elem.style.display = "none")
     }
+    hideAllImages()
 
 //__________________________________________________________________________________________
 
