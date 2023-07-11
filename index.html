@@ -84,7 +84,7 @@
    const mainTitle = document.querySelector("h1");
     const changeTitle = function () {
       mainTitle.innerText = "Nuovo Titolo";
-      console.log("---------- Esercizio 1 ----------\n", mainTitle.innerText)
+      console.log("---------- Esercizio 1 ----------\n", mainTitle.innerText);
     }
     changeTitle()
 
@@ -97,9 +97,9 @@
 
     const addClassToTitle = function () {
       mainTitle.className = "myHeading";
-      console.log("---------- Esercizio 2 ----------\n", mainTitle.className)
+      console.log("---------- Esercizio 2 ----------\n", mainTitle.className);
     }
-    addClassToTitle()
+    addClassToTitle();
 
 //__________________________________________________________________________________________
 
@@ -112,14 +112,14 @@
       let newText_p = document.querySelectorAll("div p");
 
       //trasmormo l'array NodeList in un array normale
-      newText_p = Array.from(newText_p)
+      newText_p = Array.from(newText_p);
 
       //modifico il testo di ogni p figli di div
       newText_p.forEach(elem => elem.innerText = "Nuovo testo per i p figli di div");
 
-      console.log("---------- Esercizio 3 ----------\n", newText_p)
+      console.log("---------- Esercizio 3 ----------\n", newText_p);
     }
-    changePcontent()
+    changePcontent();
 
 //__________________________________________________________________________________________
 
@@ -129,10 +129,10 @@
 
     const changeUrls = function () {
       const primo_a = document.querySelector("a");
-      primo_a.setAttribute("href", "https://www.google.com")
-      console.log("---------- Esercizio 4 ----------\nDone")
+      primo_a.setAttribute("href", "https://www.google.com");
+      console.log("---------- Esercizio 4 ----------\nDone");
     }
-    changeUrls()
+    changeUrls();
 
 //__________________________________________________________________________________________
 
@@ -141,9 +141,21 @@
     */
 
     const addToTheSecond = function () {
+      //seleziono la seconda lista
+      const sec_list_unord = document.getElementById("secondList");
 
+      //creo un nuovo li
+      const new_li = document.createElement("li");
 
+      //modifico il testo del nuovo li
+      new_li.innerText = "Nuovo elemento della seconda lista";
+
+      //lo "appendo" nella seconda lista
+      sec_list_unord.appendChild(new_li);
+
+      console.log("---------- Esercizio 5 ----------\nDone");
     }
+    addToTheSecond();
 
 //__________________________________________________________________________________________
 
