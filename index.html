@@ -207,9 +207,11 @@
       */
 
     const makeItClickable = function () {
-
-
+      mainTitle.style.userSelect = "none";
+      mainTitle.innerText = mainTitle.innerText.slice(0, -1);
     }
+    console.log("---------- Esercizio 9 ----------\nDone");
+    mainTitle.onclick= makeItClickable;
 
 //__________________________________________________________________________________________
 
