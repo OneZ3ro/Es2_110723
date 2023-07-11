@@ -193,9 +193,12 @@
       */
 
     const paintItGreen = function () {
-
-
+      let every_ul = document.querySelectorAll("ul");
+      every_ul = Array.from(every_ul);
+      every_ul.forEach(elem => elem.style.backgroundColor = "#27c42d");
+      console.log("---------- Esercizio 8 ----------\nDone");
     }
+    paintItGreen();
 
 //__________________________________________________________________________________________
 
