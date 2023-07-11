@@ -82,7 +82,7 @@
     */
 
    const mainTitle = document.querySelector("h1");
-   
+
     const changeTitle = function () {
       mainTitle.innerText = "Nuovo Titolo";
       console.log("---------- Esercizio 1 ----------\n", mainTitle.innerText);
@@ -237,9 +237,38 @@
     */
 
     const generateTable = function () {
+      const div_table = document.getElementById("tableArea");
+      const tbl = document.createElement("table");
+      let thd = document.createElement("thead");
+      let tbdy = document.createElement("tbody");
 
+      for (let i = 0; i < 1; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 0; j < 4; j++) {
+          let td = document.createElement("td");
+          td.setAttribute("id", `td ${j}`);
+          tr.appendChild(td);
+        }
+        thd.appendChild(tr);
+      }
 
+      for (let i = 0; i < 5; i++) {
+        let tr = document.createElement("tr");
+        for (let j = 0; j < 4; j++) {
+          let td = document.createElement("td");
+          tr.appendChild(td);
+        }
+        tbdy.appendChild(tr);
+      }
+      tbl.style.width = "100%";
+      thd.style.height = "20px";
+      tbdy.style.height = "60px";
+      tbl.setAttribute("border", "1");
+      tbl.appendChild(thd);
+      tbl.appendChild(tbdy);
+      div_table.appendChild(tbl)
     }
+    generateTable();
 
 //__________________________________________________________________________________________
 
