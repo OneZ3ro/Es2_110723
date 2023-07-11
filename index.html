@@ -108,9 +108,16 @@
       */
 
     const changePcontent = function () {
-      const newText_p = document.querySelector("div p");
-      newText_p.innerText = "Nuovo testo per i paragrafi all'interno di un div";
-      console.log("---------- Esercizio 3 ----------\n", newText_p.innerText)
+      //seleziono ogni p all'interno di un div
+      let newText_p = document.querySelectorAll("div p");
+
+      //trasmormo l'array NodeList in un array normale
+      newText_p = Array.from(newText_p)
+
+      //modifico il testo di ogni p figli di div
+      newText_p.forEach(elem => elem.innerText = "Nuovo testo per i p figli di div");
+
+      console.log("---------- Esercizio 3 ----------\n", newText_p)
     }
     changePcontent()
 
