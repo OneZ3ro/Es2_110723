@@ -82,6 +82,7 @@
     */
 
    const mainTitle = document.querySelector("h1");
+   
     const changeTitle = function () {
       mainTitle.innerText = "Nuovo Titolo";
       console.log("---------- Esercizio 1 ----------\n", mainTitle.innerText);
@@ -219,10 +220,14 @@
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
+    const footer_click = document.querySelector("footer");
+
     const revealFooterLink = function () {
-
-
+      const last_a = document.querySelector("footer a");
+      alert(last_a);
     }
+    console.log("---------- Esercizio 10 ----------\nDone");
+    footer_click.onclick= revealFooterLink;
 
 //__________________________________________________________________________________________
 
